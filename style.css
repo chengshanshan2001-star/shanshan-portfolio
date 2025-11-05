@@ -899,21 +899,22 @@ main {
   }
 }
 /* ---------- 专业技能 - 手机端自适应修复 ---------- */
+/* ---------- 修复：专业技能在手机上换行对齐 ---------- */
 @media screen and (max-width: 900px) {
-  .skills-grid {
+  #skills .skills-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 18px !important;
+    gap: 16px !important;
   }
 
-  .skill-item {
+  #skills .skill-item {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     width: 100% !important;
   }
 
-  .skill-label {
+  #skills .skill-label {
     width: 100% !important;
     min-width: 0 !important;
     flex: none !important;
@@ -924,12 +925,10 @@ main {
     line-height: 1.6 !important;
   }
 
-  .skill-content {
+  #skills .skill-content {
     width: 100% !important;
     text-align: justify !important;
     line-height: 1.8 !important;
     color: #444 !important;
   }
 }
-
-
