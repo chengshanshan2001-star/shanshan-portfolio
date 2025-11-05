@@ -557,7 +557,7 @@ main {
 }
 
 /* 响应式调整 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   #ai-analysis .audio-grid {
     flex-direction: column;
     align-items: center;
@@ -814,20 +814,22 @@ main {
     color: #1e90ff;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   #basic-info.info-grid {
-    flex-direction: column;   /* ✅ 手机上改成上下排列 */
-    align-items: center;      /* ✅ 居中对齐 */
-    text-align: center;       /* ✅ 让内容看起来更舒服 */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  #basic-info .info-photo {
-    text-align: center;       /* ✅ 照片也居中 */
-    margin-top: 15px;
+  #basic-info .info-left,
+  #basic-info .info-right {
+    width: 100%;
   }
 
   #basic-info .info-photo img {
-    width: 100px;             /* ✅ 缩小一点防止撑出 */
+    width: 90px;
     height: auto;
+    margin-top: 10px;
   }
 }
+
