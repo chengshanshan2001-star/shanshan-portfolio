@@ -38,22 +38,42 @@
   <!-- ============================================= -->
 
   <header>
-    <h1>Shanshan's Portfolio</h1> <!-- 一级标题，网页最重要标题 -->
-    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+  <h1>Shanshan Portfolio</h1>
+  
+  <!-- ✅ 汉堡菜单按钮 -->
+  <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
 
-    <!-- 导航栏 Nav -->
-    <nav>
-  <ul>
-    <li><a href="#about">关于我</a></li>
-    <li><a href="#music">原创音乐作品</a></li>
-    <li><a href="#ai-analysis">AI 音乐数据分析</a></li>
-    <li><a href="#ensemble">合奏演出</a></li>
-    <li><a href="#accompaniment">合作项目</a></li>
+  <nav>
+    <ul>
+      <li><a href="#about">关于我</a></li>
+      <li><a href="#music">原创音乐作品</a></li>
+      <li><a href="#ai-analysis">AI 音乐数据分析</a></li>
+      <li><a href="#ensemble">合奏演出</a></li>
+      <li><a href="#collab">合作项目</a></li>
+    </ul>
+  </nav>
+</header>
 
-  </ul>
-</nav>
+<!-- ✅ 控制菜单开关的脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('nav ul');
+  
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // 防止点击冒泡
+    navList.classList.toggle('active');
+  });
 
-  </header>
+  // 点击页面其他区域关闭菜单
+  document.addEventListener('click', (e) => {
+    if (!navList.contains(e.target) && !menuBtn.contains(e.target)) {
+      navList.classList.remove('active');
+    }
+  });
+});
+</script>
+
 
   <!-- ============================================= -->
   <!-- 网页主要内容 Main -->
