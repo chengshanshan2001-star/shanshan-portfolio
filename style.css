@@ -899,7 +899,6 @@ main {
   }
 }
 /* ---------- 专业技能 - 手机端自适应修复 ---------- */
-/* ---------- 修复：专业技能在手机上换行对齐 ---------- */
 @media screen and (max-width: 900px) {
   #skills .skills-grid {
     display: flex !important;
