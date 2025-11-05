@@ -721,3 +721,46 @@ main {
   #ai-analysis .img-group { flex-direction: column; align-items: center; }
   #ai-analysis .img-group figure { width: 85%; }
 }
+/* ---------- 手机端导航折叠菜单 ---------- */
+
+/* 默认隐藏按钮（电脑上不显示） */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  position: absolute;
+  right: 25px;
+  top: 18px;
+}
+
+/* 手机端样式 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none; /* 默认不显示导航列表 */
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  nav ul.active {
+    display: flex; /* 点击按钮后显示 */
+  }
+
+  nav a {
+    font-size: 1.1rem;
+  }
+}
