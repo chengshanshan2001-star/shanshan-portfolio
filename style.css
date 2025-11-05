@@ -833,22 +833,37 @@ main {
   }
 }
 /* ---------- 实践经历 - 手机端排版修复 ---------- */
-@media (max-width: 900px) {
+/* ---------- 实践经历 - 手机端布局修复（最终版） ---------- */
+@media screen and (max-width: 900px) {
+  .experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .experience-item {
-    flex-direction: column;     /* ✅ 改成上下结构 */
-    align-items: flex-start;    /* ✅ 左对齐 */
+    display: flex;
+    flex-direction: column !important;  /* ✅ 强制竖排 */
+    align-items: flex-start;
     text-align: left;
+    width: 100%;
   }
 
   .exp-label {
-    min-width: auto;            /* ✅ 不要固定宽度 */
-    padding-right: 0;
-    margin-bottom: 4px;
+    flex: none !important;
+    width: 100% !important;
+    min-width: auto !important;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #0c1735;
   }
 
   .exp-content {
-    width: 100%;                /* ✅ 占满整行 */
-    text-align: justify;        /* ✅ 对齐文字边界，更整齐 */
+    flex: none !important;
+    width: 100% !important;
+    text-align: justify;
+    line-height: 1.8;
   }
 }
+
 
