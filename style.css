@@ -832,4 +832,23 @@ main {
     margin-top: 10px;
   }
 }
+/* ---------- 实践经历 - 手机端排版修复 ---------- */
+@media (max-width: 900px) {
+  .experience-item {
+    flex-direction: column;     /* ✅ 改成上下结构 */
+    align-items: flex-start;    /* ✅ 左对齐 */
+    text-align: left;
+  }
+
+  .exp-label {
+    min-width: auto;            /* ✅ 不要固定宽度 */
+    padding-right: 0;
+    margin-bottom: 4px;
+  }
+
+  .exp-content {
+    width: 100%;                /* ✅ 占满整行 */
+    text-align: justify;        /* ✅ 对齐文字边界，更整齐 */
+  }
+}
 
