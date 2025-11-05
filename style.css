@@ -375,8 +375,8 @@ main {
   display: flex;
   align-items: flex-start; /* 顶部对齐 */
   justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 30px; /* 两栏之间间距比原来更小 */
+  flex-wrap: rap;
+  gap: 20px; /* 两栏之间间距比原来更小 */
 }
 
 /* 左右文字栏更窄一点 */
@@ -812,5 +812,22 @@ main {
 
   nav a:hover {
     color: #1e90ff;
+  }
+}
+@media (max-width: 768px) {
+  #basic-info.info-grid {
+    flex-direction: column;   /* ✅ 手机上改成上下排列 */
+    align-items: center;      /* ✅ 居中对齐 */
+    text-align: center;       /* ✅ 让内容看起来更舒服 */
+  }
+
+  #basic-info .info-photo {
+    text-align: center;       /* ✅ 照片也居中 */
+    margin-top: 15px;
+  }
+
+  #basic-info .info-photo img {
+    width: 100px;             /* ✅ 缩小一点防止撑出 */
+    height: auto;
   }
 }
