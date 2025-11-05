@@ -764,3 +764,53 @@ main {
     font-size: 1.1rem;
   }
 }
+/* ---------- 手机端导航折叠菜单（修正版） ---------- */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  position: absolute;
+  right: 25px;   /* ✅ 靠右 */
+  top: 20px;     /* ✅ 靠顶部 */
+  z-index: 1100; /* ✅ 保证在最上层 */
+}
+
+/* 手机端布局 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  nav a:hover {
+    color: #1e90ff;
+  }
+}
