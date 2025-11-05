@@ -1,0 +1,717 @@
+/* ============================================= */
+/* Shanshan Portfolio - 精简优化版CSS */
+/* ============================================= */
+
+/* ---------- 1. 全局基础设置 ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* ---------- 2. 页头 Header ---------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 15px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* ---------- 3. 导航栏 Nav ---------- */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #1e90ff;
+}
+
+/* ---------- 4. 页面主体 Main ---------- */
+main {
+  padding-top: 120px; /* 留出导航栏高度 */
+}
+
+/* ---------- 5. 通用 Section 样式 ---------- */
+.section {
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  padding: 40px 30px;
+  background-color: #fafafa;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #555;
+  text-align: left;
+}
+
+/* ---------- 6. 音乐作品与媒体展示区 ---------- */
+.music-item {
+  background-color: #ffffff;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.music-item h3 {
+  margin-bottom: 15px;
+  font-size: 1.35rem;
+  text-align: center;
+  color: #222;
+}
+
+.music-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+  margin-top: 12px;
+  font-style: normal;
+}
+
+/* 音频控件 */
+.music-item audio {
+  width: 80%;
+  min-height: 40px;
+  display: block;
+  margin: 15px auto;
+}
+
+/* 图片 */
+.music-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 视频 */
+.music-item video {
+  max-width: 80%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin: 15px auto;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-item video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* 合奏视频布局 */
+#ensemble {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+/* 直播视频布局 */
+#live .live-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+#live .live-video {
+  flex: 0 0 55%;
+  max-width: 650px;
+}
+
+#live .live-video video {
+  width: 100%;
+  max-height: 550px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #000;
+  display: block;
+}
+
+#live .live-desc {
+  flex: 1 1 40%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* ---------- 7. 响应式调整 ---------- */
+@media screen and (max-width: 900px) {
+  #live .live-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  #live .live-video,
+  #live .live-desc {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+  #live .live-desc {
+    padding-top: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .section {
+    padding: 30px 20px;
+  }
+  .music-item {
+    padding: 20px 15px;
+  }
+  .music-item h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ---------- 8. 前半部分（About / Education）优化 ---------- */
+
+#about, #education, .info-grid {
+  background-color: #fafafa !important;   /* ✅ 改成浅灰，与所有 section 一致 */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important; /* ✅ 统一阴影 */
+  border-radius: 15px !important;          /* ✅ 加上圆角 */
+  padding: 40px 30px !important;           /* ✅ 内边距与其他 section 一致 */
+}
+
+
+/* 主标题（个人简介标题） */
+#about h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* 小标题（h3）简化为PDF风格 */
+#about h3, #education h3 {
+  background: none !important;
+  border-bottom: 1px solid #ccc !important;
+  padding: 6px 0 !important;
+  font-size: 1.1rem !important;
+  font-weight: bold;
+  color: #2c3e50;
+  display: block;
+  border-radius: 0 !important;
+}
+
+/* 信息两列对齐 */
+#about .info-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+#about .info-left p, 
+#about .info-right p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* 链接统一蓝色风格 */
+#about a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+#about a:hover {
+  text-decoration: underline;
+}
+
+/* 教育经历列表更紧凑 */
+#education .education-item {
+  margin-bottom: 16px;
+}
+#education .edu-header {
+  font-weight: bold;
+  color: #2c3e50;
+}
+#education .edu-maj
+/* ============================================= */
+/* 专业技能部分优化：让标题与内容同一行显示 */
+/* ============================================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 每项单独占一行 */
+  gap: 8px; /* 行距 */
+}
+
+.skill-item {
+  display: flex;
+  align-items: baseline; /* 保证文字上下对齐 */
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* 左侧标签：加粗深蓝色 */
+.skill-label {
+  font-weight: bold;
+  color: #0c1735; /* 深蓝 */
+  min-width: 120px; /* 控制列宽保持整齐 */
+  flex-shrink: 0;
+}
+
+/* 右侧内容：正常灰色 */
+.skill-content {
+  flex: 1;
+  color: #444;
+}
+/* ============================================= */
+/* 统一字体样式（适用于前半部分和技能、经历等文字） */
+/* ============================================= */
+
+/* 整体统一字体大小与行距 */
+.section p,
+.section li,
+.skill-item {
+  font-size: 1.05rem;   /* 与正文一致，约16.8px */
+  line-height: 1.8;
+  color: #333;
+}
+
+/* 专业技能标题（左侧标签）更突出一点 */
+.skill-label {
+  font-size: 1.05rem;     /* 略大一些，凸显重点 */
+  font-weight: bold;
+  color: #0c1735;        /* 深蓝色 */
+  min-width: 140px;      /* 保持左右对齐整齐 */
+}
+
+/* 右侧内容保持清晰灰色 */
+.skill-content {
+  font-size: 1.05rem;
+  color: #333;
+}
+
+/* 实践经历列表与正文保持一致 */
+.section ul li {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+/* ============================================= */
+/* 基本信息布局微调 + 右侧证件照样式 */
+/* ============================================= */
+
+/* 让三栏布局更紧凑、左右对齐 */
+#basic-info.info-grid {
+  display: flex;
+  align-items: flex-start; /* 顶部对齐 */
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 30px; /* 两栏之间间距比原来更小 */
+}
+
+/* 左右文字栏更窄一点 */
+#basic-info .info-left,
+#basic-info .info-right {
+  flex: 1;              /* 各占相等空间 */
+  min-width: 250px;     /* 控制最小宽度 */
+}
+
+/* 证件照模块靠右 */
+#basic-info .info-photo {
+  flex: 0 0 140px;       /* 固定宽度 */
+  text-align: right;     /* 靠右对齐 */
+}
+
+/* 证件照样式 */
+#basic-info .info-photo img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;      /* 按比例裁剪 */
+  border-radius: 10px;    /* 轻微圆角 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* 柔和阴影 */
+}
+/* ============================================= */
+/* 实践经历 - 对齐为与技能相同的结构 */
+/* ============================================= */
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 每条经历独占一行 */
+  gap: 10px;
+}
+
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.exp-label {
+  font-weight: bold;
+  color: #0c1735; /* 深蓝，与技能标题一致 */
+  min-width: 200px; /* 左列宽度与技能标签保持协调 */
+  flex-shrink: 0;
+}
+
+.exp-content {
+  flex: 1;
+  color: #444;
+}
+/* ============================================= */
+/* 实践经历文字对齐优化 */
+/* ============================================= */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* 左边标签固定宽度，右边对齐 */
+.exp-label {
+  flex: 0 0 260px;   /* ✅ 固定宽度（可以微调成200~240px） */
+  font-weight: bold;
+  color: #0c1735;
+  padding-right: 10px; /* ✅ 给右边留一点空隙 */
+  text-align: left;   /* ✅ 文本右对齐，让冒号靠近右边列线 */
+  line-height: 1.6;
+}
+
+/* 右边内容自动换行，从统一列线起始 */
+.exp-content {
+  flex: 1;
+  color: #444;
+  text-align: justify; /* ✅ 可选，让长段落更整齐 */
+}
+/* ============================================= */
+/* AI音乐分析板块（与全站风格统一） */
+/* ============================================= */
+
+#ai-analysis {
+  background-color: #fafafa;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 50px 30px;
+  text-align: center;
+}
+
+#ai-analysis h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+#ai-analysis .ai-intro {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 50px;
+  text-align: left!important;
+}
+
+/* 音频卡片布局 */
+#ai-analysis .audio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+#ai-analysis .audio-item {
+  background-color: #fff;
+  width: 280px;
+  padding: 20px 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ai-analysis .audio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+#ai-analysis .audio-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+#ai-analysis .audio-item audio {
+  width: 100%;
+  margin: 10px 0;
+}
+
+#ai-analysis .audio-item .desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 图表区 */
+#ai-analysis .image-area {
+  margin-top: 30px;
+}
+
+#ai-analysis .image-area h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+#ai-analysis .image-area img {
+  width: 90%;
+  max-width: 720px;
+  display: block;
+  margin: 0 auto 25px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#ai-analysis .image-area .note {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+  #ai-analysis .audio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  #ai-analysis .audio-item {
+    width: 85%;
+  }
+}
+/* ============================================= */
+/* AI音乐分析板块（含六张图版本） */
+/* ============================================= */
+
+#ai-analysis {
+  background-color: #fafafa;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 50px 30px;
+  text-align: center;
+}
+
+#ai-analysis h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+#ai-analysis .ai-intro {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* 音频卡片 */
+#ai-analysis .audio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+#ai-analysis .audio-item {
+  background-color: #fff;
+  width: 280px;
+  padding: 20px 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ai-analysis .audio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+#ai-analysis .audio-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+#ai-analysis .audio-item audio {
+  width: 100%;
+  margin: 10px 0;
+}
+
+#ai-analysis .audio-item .desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 六张图的展示区 */
+#ai-analysis .image-grid {
+  margin-top: 30px;
+}
+
+#ai-analysis .image-grid h3 {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+#ai-analysis .img-pair {
+  margin-bottom: 45px;
+}
+
+#ai-analysis .img-pair h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #0c1735;
+}
+
+#ai-analysis .img-pair img {
+  width: 45%;
+  max-width: 400px;
+  margin: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#ai-analysis .img-pair img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+#ai-analysis .note {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 20px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+  #ai-analysis .audio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #ai-analysis .audio-item {
+    width: 85%;
+  }
+
+  #ai-analysis .img-pair img {
+    width: 85%;
+    display: block;
+    margin: 10px auto;
+  }
+}
+/* AI音乐分析 - 三图并排（旋律一行、节奏一行） */
+#ai-analysis .image-grid { margin-top: 40px; }
+#ai-analysis .image-grid h3 { font-size: 1.3rem; margin-bottom: 25px; color: #333; }
+
+#ai-analysis .img-row { margin-bottom: 50px; }
+#ai-analysis .img-row h4 { font-size: 1.1rem; color: #0c1735; margin-bottom: 14px; }
+
+#ai-analysis .img-group {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+}
+#ai-analysis .img-group figure {
+  width: 30%; min-width: 240px; text-align: center;
+}
+#ai-analysis .img-group img {
+  width: 100%; border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+#ai-analysis .img-group img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+#ai-analysis .img-group figcaption { margin-top: 8px; font-size: .95rem; color: #555; }
+
+/* 响应式 */
+@media (max-width: 900px) {
+  #ai-analysis .img-group { flex-direction: column; align-items: center; }
+  #ai-analysis .img-group figure { width: 85%; }
+}

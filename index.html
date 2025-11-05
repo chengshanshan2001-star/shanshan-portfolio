@@ -1,0 +1,530 @@
+<!-- ============================================= -->
+<!-- 这是 Shanshan 的个人作品展示网页基础 HTML 框架 -->
+<!-- ============================================= -->
+
+<!DOCTYPE html>
+<html lang="zh-CN"> <!-- 网页根标签，lang 表示语言 -->
+
+<head>
+  <!-- 网页头部信息，不直接显示在页面上 -->
+  <meta charset="UTF-8" /> <!-- 设置字符编码为 UTF-8，支持中文 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <!-- 让网页在手机、平板上显示正常（响应式设计） -->
+  <title>Shanshan Portfolio</title> <!-- 浏览器标签标题 -->
+  <link rel="stylesheet" href="style.css" /> <!-- 引入样式文件 style.css -->
+</head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const audios = Array.from(document.querySelectorAll('audio')); // 获取所有音频
+
+    audios.forEach(audio => {
+      audio.addEventListener('play', () => {
+        audios.forEach(other => {
+          if (other !== audio) {
+            other.pause();
+            other.currentTime = 0; // 可选，播放其他音频时把已播放的重置到开头
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<body>
+  <!-- ============================================= -->
+  <!-- 页头部分 Header -->
+  <!-- ============================================= -->
+
+  <header>
+    <h1>Shanshan's Portfolio</h1> <!-- 一级标题，网页最重要标题 -->
+
+    <!-- 导航栏 Nav -->
+    <nav>
+  <ul>
+    <li><a href="#about">关于我</a></li>
+    <li><a href="#music">原创音乐作品</a></li>
+    <li><a href="#ai-analysis">AI 音乐数据分析</a></li>
+    <li><a href="#ensemble">合奏演出</a></li>
+    <li><a href="#accompaniment">合作项目</a></li>
+
+  </ul>
+</nav>
+
+  </header>
+
+  <!-- ============================================= -->
+  <!-- 网页主要内容 Main -->
+  <!-- ============================================= -->
+  <main>
+<!-- 关于我 Section -->
+<section id="about" class="section">
+  <h2>个人简介</h2>
+  <h3> 基本信息 | Basic Information</h3>
+
+<div id="basic-info" class="info-grid">
+  <div class="info-left">
+    <p>
+      <strong>姓名：</strong> 成佳杉（Cheng Jiashan）<br>
+      <br>
+      <strong>出生年月：</strong> 2001年05月<br>
+      <br>
+      <strong>求职意向：</strong> AI辅助音乐创作 / 音乐数据分析<br>
+    </p>
+  </div>
+
+  <div class="info-right">
+    <p>
+      <strong>联系方式：</strong>Aqua_shan2001 （微信）<br>
+      <br>
+      <strong>电话：</strong> +86-13014385255<br>
+      <br>
+      <strong>邮箱：</strong>
+      <a href="mailto:chengshanshan2001@gmail.com">chengshanshan2001@gmail.com</a>
+    </p>
+  </div>
+
+  <!-- ✅ 新增证件照模块 -->
+  <div class="info-photo">
+    <img src="assets/images/zhengjianzhao.jpg" alt="证件照" />
+  </div>
+</div>
+
+
+  <!-- 2. 教育背景 -->
+  <h3>教育背景 | Education</h3>
+  <section id="education" class="section">
+
+  <div class="education-list">
+
+    <div class="education-item">
+      <div class="edu-header">
+        <span class="edu-school">韩国庆熙大学（Kyung Hee University）一般大学院 · 后现代音乐系</span>
+        <span class="edu-period">2025.03 – 2026.12（预计）</span>
+      </div>
+      <div class="edu-major">硕士在读</div>
+    </div>
+
+    <div class="education-item">
+      <div class="edu-header">
+        <span class="edu-school">韩国庆熙大学（Kyung Hee University）后现代音乐系</span>
+        <span class="edu-period">2021.03 – 2024.12</span>
+      </div>
+      <div class="edu-major">本科 · 主修作曲 / 编曲</div>
+      <div class="edu-courses">核心课程：作词作曲、混音、乐队合奏、编曲法、电影音乐、爵士和声、爵士钢琴演奏等</div>
+    </div>
+
+  </div>
+</section>
+
+
+  </p>
+  <!-- 5. 专业技能 -->
+  <h3>专业技能 | Professional Skills</h3>
+  <p>
+  <!-- 专业技能 -->
+        <div class="section">
+            <div class="section-content">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-label">语言能力：</div>
+                        <div class="skill-content">韩语 TOPIK 5级，能够与韩国人无障碍进行专业交流与合作</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">音乐制作：</div>
+                        <div class="skill-content">Logic Pro、Cubase（作曲编曲）/ Melodyne（人声修音）/ iZotope Ozone、Waves（混音）/ Sibelius、MuseScore（打谱排版）</div>
+                    </div>
+                    <div class="skill-item">
+    <div class="skill-label">AI音乐数据处理：</div>
+    <div class="skill-content">使用 Python + music21 + pandas
+         对 MIDI 数据进行旋律、和弦、调性分析，实现标准化音乐数据生成</div>
+</div>
+
+                    <div class="skill-item">
+                        <div class="skill-label">AI与音乐实验：</div>
+                        <div class="skill-content">利用各大AI工具进行旋律或人声生成、伴奏改编及音乐数据分析，探索AI辅助作曲与声音设计流程</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">编程与技术：</div>
+                        <div class="skill-content">具备前端开发（HTML/CSS）与Python编程的基础理解，
+                            能结合AI工具进行音乐作品展示与数据分析相关实践。</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label">演奏能力：</div>
+                        <div class="skill-content">电钢琴与电吉他演奏，现场即兴伴奏能力</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</p>
+
+  </p>
+  <!-- 实践经历 -->
+<h3>实践经历 | Practical Experience</h3>
+<div class="section">
+  <div class="experience-grid">
+    <div class="experience-item">
+      <div class="exp-label">原创歌曲发布：<br></div>
+      <div class="exp-content">
+        自主创作并制作多首原创歌曲，完成录制、混音及母带处理，
+        于QQ音乐、酷狗音乐及酷我音乐等平台正式发布，积累线上发行与版权登记经验。
+      </div>
+    </div>
+     <div class="experience-item">
+      <div class="exp-label">AI音乐分析项目:<br>(Python+music21)</div>
+      <div class="exp-content">
+        基于本人原创作品《远方的星空》及其由AI模型（Suno）生成的同风格复现版本，进行旋律与节奏特征分析，
+        通过可视化方法比较AI在旋律轮廓与节奏分布上的差异，
+        熟练运用AI生成与Python分析相结合的方式进行音乐数据研究。
+      </div>
+    </div>
+    <div class="experience-item">
+      <div class="exp-label">“开开华彩”教育机构项目合作：</div>
+      <div class="exp-content">
+        为老年群体设计教学音频、舞台伴奏及乐谱，完成旋律编排、和声配器与演出适配，
+        积累了面向老年受众的编曲与音乐制作经验。
+      </div>
+    </div>
+
+    <div class="experience-item">
+      <div class="exp-label">儿童英语教学音频制作：</div>
+      <div class="exp-content">
+        为儿童教学机构设计与制作“自然拼读”伴奏音频，完成旋律编排、和声配器与混音优化，
+        实现符合儿童认知与学习节奏的音乐内容，积累教育音乐创作与音频工程经验。
+      </div>
+    </div>
+
+    <div class="experience-item">
+      <div class="exp-label">个人音乐作品展示网站开发：<br>(HTML/CSS)</div>
+      <div class="exp-content">
+        自主设计并搭建用于展示原创音乐与AI音乐分析成果的多媒体网站，
+        整合音频、视频与可视化内容，实现作品展示与研究成果呈现的一体化平台。
+      </div>
+    </div>
+
+    <div class="experience-item">
+      <div class="exp-label">抖音官方栏目 "DOU来奏乐吧"： <br>(合作主播)</div>
+      <div class="exp-content">
+        基于观众随机点曲完成即兴弹奏直播，最高在线观众达到2500人，
+        锻炼即兴创作与舞台演出能力。
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 4. 校园与舞台经历 -->
+ <h3>校园与舞台经历 | Campus & Performance Experience</h3>
+<div class="section" id="campus">
+  <div class="section-content">
+    <p>
+      参与多场校园演出、留学生公演及毕业公演，负责和声改编与乐队编配与演奏。
+      在校园演出与改编过程中，积累了团队协作与跨文化沟通经验，
+      提升整体音乐审美与声音设计判断力；通过分析不同乐器音色与节奏层次，
+      优化和声配置与编制结构，增强了改编与编曲能力。
+    </p>
+  </div>
+</div>
+
+  <!-- 6. 自我评价 -->
+  <h3>自我评价 | Personal Statement</h3>
+  <p>
+    兼具<strong>音乐创作力</strong>与<strong>AI技术应用能力</strong>的复合型人才。  
+    拥有扎实的作曲与制作基础，善于利用 AI 与数字音乐技术将创意转化为可演奏、可制作的音乐作品。
+    能独立完成从旋律构思到混音成品的全流程制作，同时具备跨文化团队协作与中韩双语沟通能力。  
+    熟悉韩国音乐产业的制作流程与风格，具备国际化音乐审美。  
+    我相信，<strong>AI不是取代音乐人，而是拓宽音乐表达的边界。</strong>  
+    希望成为连接人类创造力与AI技术的桥梁，让音乐的未来更自由、更智能。
+  </p>
+</section>
+
+  <!-- 音乐作品 Section -->
+<section id="music" class="section">
+  <h2>🎵 音乐作品</h2>
+
+  <!-- 第一首 -->
+  <div class="music-item">
+    <h3>英文自作曲:Promises by the Shore (海边的承诺)</h3>
+    <audio controls>
+      <source src="assets/audio/promise.mp3" type="audio/mpeg">
+      您的浏览器不支持音频播放
+    </audio>
+    <img src="assets/images/primes.png" alt="作品截图 2">
+    <p>
+      这是一首节奏轻快的R&B风格的流行歌曲，
+      温暖的pad音色与细腻的电子鼓点交织出夏夜海边的氛围，
+      在轻盈的节奏中传递出对未来的希望。<br>
+      歌词描绘了一对恋人在海边的片刻静谧与内心的坚定，
+      即使对未来充满未知，也依然相信爱的力量与晨曦的到来。<br>
+      这首歌的灵感来自“在不确定中依然保持温柔和期待”的瞬间，
+      是对未来最真挚的承诺。
+    </p>
+  </div>  <!-- ✅加上这行 -->
+
+  <!-- 第二首 -->
+  <div class="music-item">
+    <h3>中文自作曲：远方的星空</h3>
+    <audio controls>
+      <source src="assets/audio/sunoyuanfang.mp3" type="audio/mpeg">
+      您的浏览器不支持音频播放
+    </audio>
+    <img src="assets/images/yuanfang.png" alt="作品截图 1">
+    <p>
+      这是一首抒情的中文离别歌曲，以丰富的弦乐为背景，营造出温柔而伤感的离别氛围。
+      旋律如海浪般层层推进，带出黄昏海岸的静谧与记忆的涌动。<br>
+      歌词描绘了对过去爱情的回忆与思念，呈现出离别后的孤寂与感伤。<br>
+      （注：词曲创作与编曲由本人独立完成，但使用 AI 声音模型（Suno）生成人声并在编曲环节进行细节改编与混音优化）
+    </p>
+  </div>
+
+  <!-- 第三首 -->
+  <div class="music-item">
+    <h3>英文自作曲2: The Dawn</h3>
+    <audio controls>
+      <source src="assets/audio/the dawn.mp3" type="audio/mpeg">
+      您的浏览器不支持音频播放
+    </audio>
+    <img src="assets/images/the dawn.png" alt="作品截图3">
+    <p>
+      这是一首R&B与Pop流行融合风格的作品，
+      歌曲以温柔钢琴为基底，辅以电吉他和柔和节奏，营造层次丰富的氛围。
+      歌词描绘了大学生活的场景，以黎明象征希望与新开始，
+      表达对过去的怀念与迈向未来的期待。
+      “The night is still, I play a tune on the keys, whispers to the stars.”
+      （夜色静谧，我在琴键上弹奏，低语于星辰之间）
+      展现了个人与世界的互动感。
+      天亮了象征希望与新篇章，是对过去自己的温柔告别，也是一封寄往未来的信。
+    </p>
+  </div>
+
+ <!-- 电影配乐 -->
+<div class="music-item">
+  <h3>🎬 电影音乐配乐《猫和老鼠》自配乐片段</h3>
+
+  <!-- 嵌入Bilibili视频 -->
+  <iframe 
+    src="//player.bilibili.com/player.html?isOutside=true&aid=115497945339783&bvid=BV1Nb1xBbEkh&cid=33733151829&p=1" 
+    width="100%" height="460" 
+    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+  </iframe>
+
+  <p>
+    这是使用《猫和老鼠》电影预告片创作的原创配乐。
+    作品运用管乐、弦乐、打击乐、钢琴与贝斯等多种乐器，
+    通过丰富灵活的节奏设计，使音乐在幽默与紧张之间自由切换。
+    旋律与节奏的碰撞不仅增强了画面的生动感，也赋予动画特有的活力与呼吸感，
+    有效引导观众情绪并提升对电影的期待。
+  </p>
+</div>
+
+
+
+</section>
+
+  <!-- AI 音乐数据分析 Section -->
+<section id="ai-analysis" class="section">
+  <h2>AI 音乐数据分析</h2>
+  <p class="ai-intro">
+   展示原创作品与 AI 生成版本在旋律、节奏与音域分布上的结构性差异。
+原创版本由本人独立完成作词、作曲与制作；第二版是由AI(suno)生成人声并在编曲环节进行细节改编与混音优化，
+第三版由 Suno模仿原创风格全新旋律生成。<br>
+分析图表由 Python(music21, pandas, matplotlib)生成，
+以量化比较 AI 生成音乐与人工创作在旋律与节奏层面的特征差异。
+  </p>
+
+  <div class="image-grid">
+  <h3>旋律与节奏分析结果</h3>
+
+  <!-- 第1行：三张“旋律”图 -->
+  <div class="img-row">
+    <h4>🎵 旋律音高变化（Pitch Contour）</h4>
+    <div class="img-group">
+      <figure>
+        <img src="assets/images/yuan-mel.png" alt="纯原创旋律轮廓">
+        <figcaption>原创demo版</figcaption>
+        <audio controls src="assets/audio/fuge1.mp3"></audio>
+      </figure>
+      <figure>
+        <img src="assets/images/suno-mel.png" alt="Suno混音旋律轮廓">
+        <figcaption>Suno人声合成➕混音优化版</figcaption>
+        <audio controls src="assets/audio/fuge2.mp3"></audio>
+      </figure>
+      <figure>
+        <img src="assets/images/AI_mel.png" alt="AI仿写旋律轮廓">
+        <figcaption>Suno风格模仿版</figcaption>
+        <audio controls src="assets/audio/fuge3.mp3"></audio>
+      </figure>
+    </div>
+  </div>
+  <!-- 第2行：三张“节奏”图 -->
+  <div class="img-row">
+    <h4>🥁 节奏分布对比（Rhythm Distribution）</h4>
+    <div class="img-group">
+      <figure>
+        <img src="assets/images/yuan_rhythm.png" alt="纯原创节奏分布">
+        <figcaption>原创demo版</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/suno- rhythm.png" alt="Suno混音节奏分布">
+        <figcaption>Suno人声合成➕混音优化版</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/AI_rhythm.png" alt="AI仿写节奏分布">
+        <figcaption>Suno风格模仿版</figcaption>
+      </figure>
+    </div>
+  </div>
+<p class="ai-summary"> 三首作品在旋律与节奏的层面呈现出不同的结构特征。
+  原创版本体现出自然的节奏变化与情感流动，AI 优化版在时值与声场控制上更为精确平衡，
+  AI 模仿版则呈现出风格复现中的规律化倾向。
+  三者的对比展现了人工创作与AI生成在音乐结构与表现方式上的差异与互补。 </p>
+  <p class="note">
+    数据来源：Python (music21, pandas, matplotlib) 自动提取旋律音高与节奏特征。
+  </p>
+</div>
+</section>
+<!-- 合奏演出 Section -->
+<section class="section" id="ensemble-section">
+  <h2>🎹 合奏演出</h2>
+
+  <div id="ensemble">
+    <!-- 键盘演奏1 -->
+    <article class="music-item">
+      <h3>🎵 键盘演奏片段 1</h3>
+      <video controls preload="none" poster="assets/images/hezou1.jpg" width="100%">
+        <source src="assets/video/hezou1.MOV" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+      <p class="meta">乐队合奏：键盘演奏现场</p>
+    </article>
+
+    <!-- 电吉他演出 -->
+    <article class="music-item">
+      <h3>🎸 乐队演出：留学生公演现场</h3>
+      <video controls preload="none" poster="assets/images/guitar.jpg" width="100%">
+        <source src="assets/video/guitar.MOV" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+      <p class="meta">留学生公演:电吉他演奏</p>
+    </article>
+
+    <!-- 键盘演奏2 -->
+    <article class="music-item">
+      <h3>🎵 键盘演奏片段 2</h3>
+      <video controls preload="none" poster="assets/images/hezou2.jpg" width="100%">
+        <source src="assets/video/hezou2.MOV" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+      <p class="meta">乐队合奏：键盘演奏现场（日常乐队演奏的片段）</p>
+    </article>
+
+    <!-- 电钢琴演出 -->
+    <article class="music-item">
+      <h3>🎹 乐队演出：公演现场</h3>
+      <video controls preload="none" poster="assets/images/gongyan2.jpg" width="100%">
+        <source src="assets/video/gongyan.mov" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+      <p class="meta">校园舞台演出：以 pad 音色为主演奏。</p>
+    </article>
+  </div>
+</section>
+
+<!-- 实时演奏 Section -->
+<section id="live" class="section">
+  <h2>抖音直播弹奏 / Live Performance</h2>
+
+  <article class="music-item live-item">
+  <div class="live-video">
+    <video controls preload="none" poster="assets/images/live.PNG">
+      <source src="assets/video/live.MOV" type="video/mp4">
+      您的浏览器不支持视频播放。
+    </video>
+  </div>
+  <div class="live-desc">
+    <h3>🎹 直播弹奏片段</h3>
+    <p class="meta">平台：抖音</p>
+    <p class="desc">   曾于大学期间，在抖音平台进行了为期一年的钢琴即兴演奏直播。
+      主要以流行曲即兴演奏为主，也有经典钢琴曲与部分古典作品。
+      根据观众实时点曲进行即兴编配与演奏，积累了上百首不同风格的演奏经验。
+      在这一过程中培养了快速听辨能力、即兴创作能力与现场表达力，
+      也深化了对旋律与和声结构的理解。这段实践成为我音乐创作灵感的重要来源。</p>
+  </div>
+</article>
+</section>
+<!-- 合作项目 Section -->
+<section id="collaboration" class="section">
+  <h2>合作项目</h2>
+
+  <!-- 项目 1：老年音乐教育 -->
+  <div class="music-item">
+    <h3>老年音乐教育 AI 辅助伴奏项目：《歌唱祖国》</h3>
+    <audio controls>
+      <source src="assets/audio/gechangzuguo.mp3" type="audio/mpeg">
+      您的浏览器不支持音频播放
+    </audio>
+    <img src="assets/images/gechangzuguo.png" alt="项目截图">
+    <p>
+      本项目以经典歌曲《歌唱祖国》为基础，面向老年音乐教学开发专用伴奏与 AI 人声示范版本。
+在保留原曲庄重与抒情特质的前提下，对整体速度与音域进行再设计：<br>将演唱速度放缓，
+以匹配老年学习者的节奏反应时与旋律模仿节奏，
+使其在演唱中更从容地进行节拍定位与呼吸分配。<br>
+配器方面通过调整和声层次，降低节奏复杂度，提升听感稳定性与可跟唱性。<br>
+同时利用 X Studio 生成多速度与多音高的人声示范（标准/慢速教学版），
+便于教师依据课堂进度灵活选用。<br>
+<strong>项目意义：</strong> 在教育与社会应用场景中体会音乐科技如何服务社会，并延展艺术的温度，
+使经典旋律以更友好的速度被跨代传唱。
+    </p>
+  </div>
+
+  <!-- 项目 2：儿童自然拼读 -->
+  <div class="music-item">
+    <h3>儿童教育音乐项目：“自然拼读”伴奏设计（约 30 首）</h3>
+    <audio controls>
+      <source src="assets/audio/jkl.mp3" type="audio/mpeg">
+      您的浏览器不支持音频播放
+    </audio>
+    <img src="assets/images/ziran.png" alt="自然拼读配乐工程截图">
+    <p>
+      本项目为儿童英语启蒙教育机构开发系列化“自然拼读”教学配乐与伴奏，累计制作约三十首作品。<br>
+      围绕教学单元的语音节奏与重音分布开展音乐节奏设计，通过旋律，节拍与发音重读的对应关系，
+      提升课堂的趣味性与记忆性，并辅助学生在歌唱与律动中形成稳固的语音感知。
+      <br>
+    </p>
+    <p>
+      <strong>项目意义：</strong> 通过音乐与语言的结合，激发儿童的学习兴趣。
+    </p>
+  </div>
+
+</section>
+
+
+    </section>
+</main>
+<main class="main-content">
+  <!-- 保留原有的所有 section 内容 -->
+</main>
+  <!-- ============================================= -->
+  <!-- 页脚 Footer -->
+  <!-- ============================================= -->
+  <footer>
+    <p>© 2025 Shanshan. All rights reserved.</p>
+  </footer>
+  <script>
+  // 选取页面内所有 <video> 元素
+  const videos = document.querySelectorAll("video");
+
+  // 当某个视频开始播放时
+  videos.forEach((video) => {
+    video.addEventListener("play", () => {
+      // 暂停其他正在播放的视频
+      videos.forEach((otherVideo) => {
+        if (otherVideo !== video && !otherVideo.paused) {
+          otherVideo.pause();
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
