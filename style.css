@@ -1006,3 +1006,27 @@ main {
     font-size: 1.9rem;
   }
 }
+/* ============================================= */
+/* 修复标题居中：电脑居中 + 手机适配 */
+/* ============================================= */
+
+/* 电脑端和平板端（宽屏）标题居中显示 */
+@media (min-width: 901px) {
+  .section h2,
+  .section h3 {
+    text-align: center !important;  /* ✅ 保证居中 */
+    margin: 0 auto 25px auto;
+    width: 100%;
+  }
+}
+
+/* 手机端（≤900px）标题稍微小一点，保持在框内 */
+@media (max-width: 900px) {
+  .section h2,
+  .section h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    word-break: keep-all; /* ✅ 防止换行导致溢出 */
+  }
+}
