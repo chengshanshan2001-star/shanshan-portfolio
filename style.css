@@ -1064,3 +1064,34 @@ h2[style] {
     font-size: 1.8rem !important;
   }
 }
+/* ============================================= */
+/* 💫终极修复：让所有主要标题无论在哪都水平居中 */
+/* ============================================= */
+
+h2, h3 {
+  text-align: center !important;
+  width: 100% !important;
+  display: block !important;
+  margin: 0 auto 25px auto !important;
+  color: #333 !important;
+  font-weight: 600 !important;
+}
+
+/* ✅ 教育背景 / 实践经历 / 专业技能标题单独适配 */
+h3:has(+ .section),
+h2:has(+ .section) {
+  text-align: center !important;
+  margin-bottom: 25px !important;
+}
+
+/* 手机端标题略小，防止挤压 */
+@media (max-width: 900px) {
+  h2, h3 {
+    font-size: 1.4rem !important;
+  }
+}
+@media (min-width: 901px) {
+  h2, h3 {
+    font-size: 1.8rem !important;
+  }
+}
