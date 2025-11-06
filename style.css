@@ -931,3 +931,55 @@ main {
     color: #444 !important;
   }
 }
+/* ============================================= */
+/* 响应式导航菜单（手机端） */
+/* ============================================= */
+@media (max-width: 900px) {
+  nav ul {
+    display: none;              /* 默认隐藏菜单 */
+    flex-direction: column;     /* 垂直排列 */
+    background-color: white;    /* 菜单背景 */
+    position: absolute;
+    top: 70px;                  /* 距离顶部 */
+    right: 20px;                /* 靠右边 */
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  nav ul.active {
+    display: flex;              /* 点汉堡后显示 */
+    animation: dropdown 0.25s ease forwards;
+  }
+
+  /* 汉堡按钮在手机上显示 */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* 动画：轻微下滑出现 */
+  @keyframes dropdown {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+}
+
+/* 电脑端隐藏汉堡按钮 */
+@media (min-width: 901px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  nav ul {
+    display: flex;  /* 正常水平导航 */
+    gap: 30px;
+  }
+}
