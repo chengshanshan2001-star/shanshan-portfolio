@@ -1030,3 +1030,37 @@ main {
     word-break: keep-all; /* ✅ 防止换行导致溢出 */
   }
 }
+/* ============================================= */
+/* 强制修复：教育背景 / 实践经历 / 专业技能标题回到居中 */
+/* ============================================= */
+
+/* 通用标题居中样式 */
+.section > h2,
+.section > h3,
+h3[style],
+h2[style] {
+  text-align: center !important;
+  margin: 0 auto 25px auto !important;
+  width: 100% !important;
+  display: block !important;
+  color: #333 !important;
+  font-weight: 600 !important;
+}
+
+/* 手机端额外适配，防止溢出 */
+@media (max-width: 900px) {
+  .section > h2,
+  .section > h3 {
+    font-size: 1.4rem !important;
+    word-break: keep-all !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* 电脑端标题更大一点 */
+@media (min-width: 901px) {
+  .section > h2,
+  .section > h3 {
+    font-size: 1.8rem !important;
+  }
+}
