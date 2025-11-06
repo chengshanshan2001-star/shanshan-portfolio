@@ -1065,9 +1065,11 @@ h2[style] {
   }
 }
 /* ============================================= */
-/* 💫终极修复：让所有主要标题无论在哪都水平居中 */
+/* ============================================= */
+/* 🚀终极修复：所有主要标题在所有屏幕上都强制居中 */
 /* ============================================= */
 
+/* 通用修复 */
 h2, h3 {
   text-align: center !important;
   width: 100% !important;
@@ -1075,23 +1077,24 @@ h2, h3 {
   margin: 0 auto 25px auto !important;
   color: #333 !important;
   font-weight: 600 !important;
+  border: none !important; /* 防止被老样式影响 */
 }
 
-/* ✅ 教育背景 / 实践经历 / 专业技能标题单独适配 */
-h3:has(+ .section),
-h2:has(+ .section) {
+/* 教育背景、实践经历、专业技能这些标题单独强化 */
+h3:contains("教育背景"),
+h3:contains("实践经历"),
+h3:contains("专业技能") {
   text-align: center !important;
-  margin-bottom: 25px !important;
+  font-size: 1.8rem !important;
+  margin: 0 auto 25px auto !important;
+  display: block !important;
+  color: #333 !important;
 }
 
-/* 手机端标题略小，防止挤压 */
+/* 手机端字体稍微小一点 */
 @media (max-width: 900px) {
   h2, h3 {
     font-size: 1.4rem !important;
-  }
-}
-@media (min-width: 901px) {
-  h2, h3 {
-    font-size: 1.8rem !important;
+    text-align: center !important;
   }
 }
