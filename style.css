@@ -1105,3 +1105,43 @@ h3:contains("专业技能") {
     text-align: center !important;
   }
 }
+/* ============================================= */
+/* 🚀 强制修复：手机端菜单从右边展开（覆盖旧样式） */
+/* ============================================= */
+@media (max-width: 900px) {
+  nav ul {
+    display: none !important;
+    flex-direction: column !important;
+    background-color: rgba(255,255,255,0.96) !important;
+    backdrop-filter: blur(6px);
+    position: fixed !important;     /* ✅ 改成 fixed，让它独立浮动 */
+    top: 65px !important;
+    right: 0 !important;            /* ✅ 从右边展开 */
+    left: auto !important;          /* ❌ 禁止从左边 */
+    width: 75% !important;
+    height: auto;
+    padding: 25px 0 !important;
+    border-radius: 10px 0 0 10px !important;
+    box-shadow: -6px 4px 12px rgba(0,0,0,0.15) !important;
+    text-align: center !important;
+    z-index: 2000 !important;
+    transform: translateX(100%) !important; /* 初始隐藏在右侧 */
+    opacity: 0 !important;
+    transition: transform 0.35s ease, opacity 0.35s ease !important;
+  }
+
+  nav ul.active {
+    display: flex !important;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: 20px !important;
+    font-size: 2rem !important;
+    z-index: 2100 !important;
+  }
+}
