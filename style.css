@@ -983,3 +983,26 @@ main {
     gap: 30px;
   }
 }
+/* ============================================= */
+/* 适配手机端标题与汉堡按钮不重叠 */
+/* ============================================= */
+@media (max-width: 900px) {
+  header {
+    position: relative;
+    text-align: center;
+    padding: 15px 50px; /* ✅ 左右留空给汉堡按钮 */
+  }
+
+  header h1 {
+    font-size: 1.6rem; /* ✅ 字体变小一点 */
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    right: 15px;   /* ✅ 靠右 */
+    top: 18px;     /* ✅ 与标题居中 */
+    font-size: 1.9rem;
+  }
+}
