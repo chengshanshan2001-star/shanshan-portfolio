@@ -426,7 +426,7 @@
 </article>
 </section>
 <!-- 合作项目 Section -->
-<section id="collaboration" class="section">
+<section id="collab" class="section">
   <h2>合作项目</h2>
 
   <!-- 项目 1：老年音乐教育 -->
@@ -470,10 +470,6 @@
   </div>
 
 </section>
-
-
-    </section>
-</main>
 <main class="main-content">
   <!-- 保留原有的所有 section 内容 -->
 </main>
@@ -500,7 +496,7 @@
   });
 </script>
  <!-- ✅ 放在网页最底部的脚本 -->
-  <script>
+   <script>
   document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.querySelector('.menu-toggle');
     const navList = document.querySelector('nav ul');
@@ -516,8 +512,41 @@
       }
     });
   });
+
+  // ✅ 确保同时只播放一个音频
+  document.addEventListener("play", function(e) {
+    const audios = document.getElementsByTagName("audio");
+    for (let i = 0; i < audios.length; i++) {
+      if (audios[i] !== e.target) {
+        audios[i].pause();
+      }
+    }
+  }, true);
   </script>
+<script>
+// ✅ 移动端视频播放兼容修复：让第一次点击就能播放
+document.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('video');
+
+  videos.forEach(video => {
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play().catch(() => {}); // 如果被系统阻止，不报错
+      } else {
+        video.pause();
+      }
+    });
+
+    // ✅ 支持微信 / Safari 自动允许交互播放
+    video.setAttribute('playsinline', 'true');
+    video.setAttribute('webkit-playsinline', 'true');
+    video.setAttribute('controlsList', 'nodownload');
+  });
+});
+</script>
+
 </body>
 </html>
+
 
 
