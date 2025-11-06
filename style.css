@@ -1106,42 +1106,70 @@ h3:contains("专业技能") {
   }
 }
 /* ============================================= */
-/* 🚀 强制修复：手机端菜单从右边展开（覆盖旧样式） */
+/* ============================================= */
+/* 🚀 最终修正版：手机端右侧展开菜单（窄边+居中） */
 /* ============================================= */
 @media (max-width: 900px) {
-  nav ul {
-    display: none !important;
-    flex-direction: column !important;
-    background-color: rgba(255,255,255,0.96) !important;
+  header nav ul {
+    all: unset; /* 清空旧样式 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    left: auto;
+    width: 60%; /* ✅ 菜单宽度缩小，只占屏幕60% */
+    max-width: 260px; /* ✅ 限制最大宽度，看起来更精致 */
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(6px);
-    position: fixed !important;     /* ✅ 改成 fixed，让它独立浮动 */
-    top: 65px !important;
-    right: 0 !important;            /* ✅ 从右边展开 */
-    left: auto !important;          /* ❌ 禁止从左边 */
-    width: 75% !important;
-    height: auto;
-    padding: 25px 0 !important;
-    border-radius: 10px 0 0 10px !important;
-    box-shadow: -6px 4px 12px rgba(0,0,0,0.15) !important;
-    text-align: center !important;
-    z-index: 2000 !important;
-    transform: translateX(100%) !important; /* 初始隐藏在右侧 */
-    opacity: 0 !important;
-    transition: transform 0.35s ease, opacity 0.35s ease !important;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -6px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    gap: 16px;
+    padding: 25px 0;
+    z-index: 2000;
+    transform: translateX(100%); /* 默认隐藏在右边 */
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
   }
 
-  nav ul.active {
-    display: flex !important;
-    transform: translateX(0) !important;
-    opacity: 1 !important;
+  header nav ul.active {
+    transform: translateX(0);
+    opacity: 1;
   }
 
+  header nav a {
+    color: #333 !important;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 0;
+    width: 100%;
+    display: block;
+  }
+
+  header nav a:hover {
+    color: #1e90ff !important;
+  }
+
+  /* 汉堡按钮 */
   .menu-toggle {
     display: block !important;
-    position: absolute !important;
-    right: 20px !important;
-    top: 20px !important;
-    font-size: 2rem !important;
-    z-index: 2100 !important;
+    position: absolute;
+    right: 18px;
+    top: 20px;
+    font-size: 1.9rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2100;
+  }
+
+  /* 动画 */
+  @keyframes dropdown {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
   }
 }
