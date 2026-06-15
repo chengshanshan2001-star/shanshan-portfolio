@@ -135,7 +135,6 @@ main {
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
-
 /* 视频 */
 .music-item video {
   max-width: 80%;
@@ -391,7 +390,8 @@ main {
   flex: 0 0 140px;       /* 固定宽度 */
   text-align: right;     /* 靠右对齐 */
 }
-
+margin-top: -20px;   /* 往上移动 */
+}
 /* 证件照样式 */
 #basic-info .info-photo img {
   width: 120px;
