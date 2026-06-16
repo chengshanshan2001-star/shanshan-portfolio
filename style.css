@@ -384,21 +384,28 @@ main {
   flex: 1;              /* 各占相等空间 */
   min-width: 250px;     /* 控制最小宽度 */
 }
-
 /* 证件照模块靠右 */
 #basic-info .info-photo {
   flex: 0 0 140px;       /* 固定宽度 */
-  text-align: right;     /* 靠右对齐 */
-}
-margin-top: -30px;   /* 往上移动 */
+  width: 140px;
+  text-align: right;
+  margin-top: -30px;     /* 往上移动，可自行调整 */
 }
 /* 证件照样式 */
 #basic-info .info-photo img {
-  width: 120px;
-  height: 160px;
-  object-fit: cover;      /* 按比例裁剪 */
-  border-radius: 10px;    /* 轻微圆角 */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* 柔和阴影 */
+  display: block;
+  width: 120px !important;
+  max-width: 120px !important;
+  min-width: 120px !important;
+
+  height: 160px !important;
+  max-height: 160px !important;
+  min-height: 160px !important;
+
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  margin-left: auto;
 }
 /* ============================================= */
 /* 实践经历 - 对齐为与技能相同的结构 */
